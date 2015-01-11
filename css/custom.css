@@ -1,0 +1,30 @@
+
+body{
+	background: #D3C5D0;
+	font:  14px/1.4 Verdana, Arial, Helvetica, sans-serif;
+	color: #010101;
+
+}
+.title{
+	font: 400 24px/37px Verdana, Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	color: #000000;
+}
+.form-wrap{
+	background-color: rgba(255, 255, 255, 0.74);
+	border-radius: 4px;
+	overflow: hidden;
+	padding: 30px 0;
+	margin-top: 20px;
+}
+.contact-largeimg{
+	background-color: #eeeeee;
+	border-radius: 9px;
+}
+label{
+	font-size: 14px;
+	color: #010101;
+}
+.container{
+	width: 900px;
+}

@@ -1,0 +1,31 @@
+<div class="container" ng-controller="ContactListCtrl">
+	<div class="col-lg-3">
+		<a href="#/contacts/new" class="btn btn-default">Добавить</a>
+	</div>
+	<div class="col-lg-3 pull-right text-right">
+		<a href="#/contact/list" class="btn btn-default">
+			<span class="glyphicon glyphicon-th-list"></span>
+		</a>
+		<a href="#/contact/tile" class="btn btn-default">
+			<span class="glyphicon glyphicon-th"></span>
+		</a>
+	</div>
+</div>
+<div class="container">
+	<div class="col-lg-12">
+		<div class="form-wrap">
+			<div class="col-lg-3 text-center" ng-repeat="contact in contacts">
+				<a href="">
+					<img src="{{ contact.linkPhoto }}" alt="Фото" class="img-thumbnail contact-middleimg" width="130" height="130">
+				</a>
+				<div>
+					{{ contact.lastName + " " + contact.firstName }}
+
+				</div>
+				<div>
+					{{ contact.phone }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	

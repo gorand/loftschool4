@@ -1,0 +1,53 @@
+<div ng-controller="ContactListCtrl">
+	<div class="container">
+		<div class="col-lg-3">
+			<a href="#/contacts/new" class="btn btn-default">Добавить</a>
+		</div>
+		<div class="col-lg-3 pull-right text-right">
+			<a href="" class="btn btn-default" ng-class="list ? 'active' : '.btn.btn-default'" ng-click="tile=false; list=true" >
+				<span class="glyphicon glyphicon-th-list"></span>
+			</a>
+			<a href="" class="btn btn-default" ng-class="tile ? 'active' : '.btn.btn-default'" ng-click="tile=true; list=false" >
+				<span class="glyphicon glyphicon-th"></span>
+			</a>
+		</div>
+	</div>
+	<div class="container">
+		<div class="col-lg-12">
+			<div class="form-wrap">
+				<div class="col-lg-3 text-center" ng-hide="list" ng-show="tile" ng-repeat="contact in contacts">
+					<a href="">
+						<img src="{{ contact.linkPhoto }}" alt="Фото" class="img-thumbnail contact-middleimg" width="130" height="130">
+					</a>
+					<div>
+						{{ contact.lastName + " " + contact.firstName }}
+
+					</div>
+					<div>
+						{{ contact.phone }}
+					</div>
+				</div>
+
+				<table class="table" ng-show="list" ng-hide="tile">
+					<tr>
+						<th>#</th>
+						<th>Имя</th>
+						<th>Фамилия</th>
+						<th>Телефон</th>
+						<th>Email</th>
+					</tr>
+					<tbody ng-repeat="contact in contacts">
+						<tr>
+							<td> {{ contact.id }} </td>
+							<td> {{ contact.firstName }} </td>
+							<td> {{ contact.lastName }} </td>
+							<td> {{ contact.phone }} </td>
+							<td> {{ contact.email }} </td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>	
+</div>

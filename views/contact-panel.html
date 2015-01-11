@@ -1,0 +1,37 @@
+<div class="container" ng-controller="ContactListCtrl">
+	<div class="col-lg-3">
+		<a href="#/contacts/new" class="btn btn-default">Добавить</a>
+	</div>
+	<div class="col-lg-3 pull-right text-right">
+		<a href="" class="btn btn-default">
+			<span class="glyphicon glyphicon-th-list"></span>
+		</a>
+		<a href="" class="btn btn-default">
+			<span class="glyphicon glyphicon-th"></span>
+		</a>
+	</div>
+</div>
+<div class="container">
+	<div class="col-lg-12">
+		<div class="form-wrap">
+			<table class="table">
+				<tr>
+					<th>#</th>
+					<th>Имя</th>
+					<th>Фамилия</th>
+					<th>Телефон</th>
+					<th>Email</th>
+				</tr>
+				<tbody ng-repeat="contact in contacts">
+					<tr>
+						<td> {{ contact.id }} </td>
+						<td> {{ contact.firstName }} </td>
+						<td> {{ contact.lastName }} </td>
+						<td> {{ contact.phone }} </td>
+						<td> {{ contact.email }} </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>	

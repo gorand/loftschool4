@@ -1,0 +1,62 @@
+<div class="container">
+	<div class="col-lg-3">
+		<a href="#/contacts" class="btn btn-default">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+	</div>
+</div>
+<div class="container">
+	<div class="col-lg-12">
+		<div class="form-wrap">
+			<form name="personForm" ng-controller="NewContactCtrl" >
+				<div class="col-lg-6">
+					<div class="col-lg-offset-4 col-lg-8">
+						<a href="">
+							<img src="" alt="Фото" class="img-thumbnail contact-largeimg" width="200" height="200">
+						</a>
+					</div>
+					<div class="col-lg-offset-4 col-lg-8">
+						<button class="btn btn-default">Сохранить</button>
+						<button class="btn btn-default">Удалить</button>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="form-group col-lg-10" ng-class="{ 'has-error' : personForm.firstName.$invalid && !personForm.firstName.$pristine }">
+						<label for="firstName">Имя</label>
+						<div class="text-danger" ng-show="personForm.firstName.$error.minlength"> не менее трех символов</div>
+						<div class="text-danger" ng-show="personForm.firstName.$error.maxlength"> максимум 20 символов</div>
+						<input ng-model="contact.firstName" name="firstName" ng-minlength="3" ng-maxlength="20" id="firstName" class="form-control" type="text" placeholder="Имя контакта" required>
+
+						<span class="error" ng-show="contact.firstName.$error.required">Не заполнено</span>
+					</div>
+					<div class="form-group col-lg-10" ng-class="{ 'has-error' : personForm.lastName.$invalid && !personForm.lastName.$pristine }">
+						<label for="lastName">Фамилия</label>
+						<div class="text-danger" ng-show="personForm.lastName.$error.minlength"> не менее двух символов</div>
+						<div class="text-danger" ng-show="personForm.lastName.$error.maxlength"> максимум 25 символов</div>
+						<input id="lastName" name="lastName" ng-model="contact.lastName" class="form-control" type="text" placeholder="Фамилия контакта" ng-minlength="2" ng-maxlength="25" required>
+					</div>
+					<div class="form-group col-lg-10">
+						<label>Контактная информация</label>
+						<div class="text-danger" ng-show="personForm.email.$error.email">email не корректен</div>
+						<div class="input-group" ng-class="{'has-error': personForm.email.$error.email}">
+
+							<span class="input-group-addon">
+								<i class="glyphicon glyphicon-envelope"></i>
+							</span>
+								<input id="contactEmail" class="form-control" ng-model="contacts.email" name="email" type="email" placeholder="yourmail@gmail.com" required>
+
+
+						</div>
+						<br>
+						<div class="input-group">
+							<span class="input-group-addon">
+								<i class="glyphicon glyphicon-earphone"></i>
+							</span>
+							<input id="contactPhone" class="form-control" type="text" placeholder="+ 7 911 123 4567">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
